@@ -31,11 +31,13 @@ static const int colorfultag        = 1;        /* 0 means use SchemeSel for sel
 #define ICONSIZE 19   /* icon size */
 #define ICONSPACING 8 /* space between icon and title */
 
-static const char *fonts[]          = {"Iosevka:style:medium:size=12" ,"JetBrainsMono Nerd Font:style:medium:size=11",
+ static const char *fonts[]          = {"Iosevka:style:medium:size=12" ,"JetBrainsMono Nerd Font:style:Medium:size=11",
                                         "Material Design Icons Desktop:size=11" };
+//                                        "Material Icons:size=11" };
+
 
 // theme
-#include "themes/onedark.h"
+#include "themes/gruvchad.h"
 
 static const char *colors[][3]      = {
     /*                     fg       bg      border */
@@ -144,8 +146,8 @@ static Key keys[] = {
     {MODKEY,                            XK_u,       spawn,
         SHCMD("maim --select | xclip -selection clipboard -t image/png")},
 
-    { MODKEY,                           XK_c,       spawn,          SHCMD("rofi -show drun") },
-    { MODKEY,                           XK_Return,  spawn,            SHCMD("st")},
+    { MODKEY|ShiftMask,                 XK_p,       spawn,          SHCMD("rofi -show drun") },
+    { MODKEY,                           XK_Return,  spawn,            SHCMD("alacritty")},
 
     // toggle stuff
     { MODKEY,                           XK_b,       togglebar,      {0} },
@@ -214,14 +216,14 @@ static Key keys[] = {
 
     // change border size
     { MODKEY|ShiftMask,                 XK_minus,   setborderpx,    {.i = -1 } },
-    { MODKEY|ShiftMask,                 XK_p,       setborderpx,    {.i = +1 } },
+    { MODKEY|ShiftMask,                 XK_equal,    setborderpx,    {.i = +1 } },
     { MODKEY|ShiftMask,                 XK_w,       setborderpx,    {.i = default_border } },
 
     // kill dwm
     { MODKEY|ControlMask,               XK_q,       spawn,        SHCMD("killall bar.sh dwm") },
 
     // kill window
-    { MODKEY,                           XK_q,       killclient,     {0} },
+    { MODKEY|ShiftMask,                 XK_c,       killclient,     {0} },
 
     // restart
     { MODKEY|ShiftMask,                 XK_r,       restart,           {0} },
