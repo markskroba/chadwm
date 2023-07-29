@@ -10,6 +10,7 @@ picom &
 xrandr --auto --output HDMI-1-1 --mode 1920x1080 --right-of HDMI-0 &
 nitrogen --restore &
 setxkbmap -layout us,ru -option grp:alt_shift_toggle &
+flameshot & 
 
 ~/.config/wm/scripts/bar.sh &
 while type dwm >/dev/null; do dwm && continue || break; done
