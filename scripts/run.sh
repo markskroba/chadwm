@@ -7,7 +7,7 @@ xset r rate 200 50 &
 picom &
 
 # autostart
-xrandr --auto --output HDMI-1-1 --mode 1920x1080 --right-of HDMI-0 &
+xrandr --auto --output HDMI-1-1 --mode 1920x1080 --right-of HDMI-2 &
 nitrogen --restore &
 setxkbmap -layout us,ru -option grp:alt_shift_toggle &
 flameshot & 
